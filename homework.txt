@@ -1,0 +1,87 @@
+1. Return ALL the data in the 'movies' table.
+
+SELECT * FROM movies;
+
+ id |                title                | year | show_time 
+----+-------------------------------------+------+-----------
+  1 | Iron Man                            | 2008 | 17:45
+  2 | The Incredible Hulk                 | 2008 | 23:55
+  3 | Iron Man 2                          | 2010 | 14:10
+  4 | Thor                                | 2011 | 15:25
+  5 | Captain America: The First Avenger  | 2011 | 16:50
+  6 | Avengers Assemble                   | 2012 | 19:45
+  7 | Iron Man 3                          | 2013 | 18:15
+  8 | Thor: The Dark World                | 2013 | 17:00
+  9 | Batman Begins                       | 2005 | 21:00
+ 10 | Captain America: The Winter Soldier | 2014 | 19:20
+ 11 | Guardians of the Galaxy             | 2014 | 14:30
+ 12 | Avengers: Age of Ultron             | 2015 | 15:45
+ 13 | Ant-Man                             | 2015 | 20:15
+ 14 | Captain America: Civil War          | 2016 | 18:35
+ 15 | Doctor Strange                      | 2016 | 23:50
+
+2. Return ONLY the name column from the 'people' table
+
+SELECT name FROM people;
+       name        
+-------------------
+ Gordon Bain
+ John Daly
+ Jodie Garden
+ Ellen Grafton
+ Allisder Hood
+ Chris Kennedy
+ Ruth Lees
+ Harvey Wheaton
+ Keir Macdonald
+ Daniel MacDonald
+ Arlene McDaid
+ Colin McKean
+ Murray McQuarrie
+ Ryan Sinclair
+ Michaela Strachan
+(15 rows)
+
+3. Oops! Someone at CodeClan spelled Alastair's name wrong! Change it to reflect the proper spelling (change 'Allisder Hood' to 'Alastair Hood').
+
+UPDATE people SET name = 'Alastair Hood' WHERE name = 'Allisder Hood';
+
+UPDATE 1
+
+4. Return ONLY your name from the 'people' table.
+
+SELECT name FROM people WHERE name = 'Colin McKean';
+
+     name     
+--------------
+ Colin McKean
+(1 row)
+
+5. The cinema is showing 'Batman Begins', but Batman is DC, not Marvel! Delete the entry from the 'movies' table.
+
+DELETE FROM movies WHERE title = 'Batman Begins';
+DELETE 1
+
+6. Create a new entry in the 'people' table with the name of one of the instructors.
+
+INSERT INTO people (name) VALUES ('Alan Russell');
+
+INSERT 0 1
+
+7. Harvey Wheaton has decided to hijack our movie evening, Remove him from the table of people.
+
+DELETE FROM people WHERE name = 'Harvey Wheaton';
+
+DELETE 1
+
+8. The cinema has just heard that they will be holding an exclusive midnight showing of 'Guardians of the Galaxy 2'!! Create a new entry in the 'movies' table to reflect this.
+
+INSERT INTO movies (title, year, show_time) VALUES ('Guardians of the Galaxy 2', 2017, '00:00');
+
+INSERT 0 1
+
+9. The cinema would also like to make the Guardian movies a back to back feature. Update the 'Guardians of the Galaxy' show time from 12:10 to 21:30
+
+UPDATE movies SET show_time = '21:30' WHERE title = 'Guardians of the Galaxy';
+
+UPDATE 1
